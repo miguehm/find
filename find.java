@@ -43,14 +43,14 @@ public class find
         // for each path-name given
         for( int i = 0 ; i < args.length ; i ++ )
         {
-            tree(args[i]);
+            find(args[i]);
         }
 
         // exit with success if we process all the arguments
         Kernel.exit( 0 ) ;
     }
 
-    private static void tree(String name) throws Exception{
+    private static void find(String name) throws Exception{
         //String name = args[i] ;
 
         //System.out.println("test: "+args[i]);
@@ -92,7 +92,7 @@ public class find
 
             // print a heading for this directory
             //System.out.println() ;
-            System.out.println( name) ;
+            //System.out.println(name) ;
 
             // create a directory entry structure to hold data as we read
             DirectoryEntry directoryEntry = new DirectoryEntry() ;
@@ -119,8 +119,8 @@ public class find
                 }
 
                 if(!entryName.equals(".") && !entryName.equals("..")){
-                    //System.out.println(name+"+"+entryName);
-                    tree(name+"/"+entryName);
+                    System.out.println(name+"/"+entryName);
+                    find(name+"/"+entryName);
                 }
             }
 
