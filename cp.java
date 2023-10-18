@@ -77,7 +77,9 @@ public class cp
     // give the parameters more meaningful names
     String in_name = argv[0] ;
     String out_name = argv[1] ;
-
+    /*Se llama al metodo  */
+    Kernel.isDirectory(in_name);
+    //Kernel.isDirectory(out_name);
     // open the input file
     int in_fd = Kernel.open( in_name , Kernel.O_RDONLY ) ;
     if( in_fd < 0 )
